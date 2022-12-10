@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block title %} Cart {% endblock %}
+
+{% block content %}
+
+<form action="/" method="post">
+
+<div class="py-5 text-center">
+
+      <h2>Cart product</h2>
+      <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+    </div>
+
+<div class="container mt-5"></div>
+
+        {% for el in cart_products %}
+    <div class="alert alert-info">
+        <h2>{{ el['name'] }}</h2>
+        <p>{{ el['description'] }}</p>
+        <p><b>Price: {{ el['price'] }}</b></p>
+
+        <a href="/delete/{{el['id_product']}}" class="btn btn-secondary my-2">Delete</a>
+    </div>
+           {% endfor %}
+
+</form>
+
+
+{% endblock %}

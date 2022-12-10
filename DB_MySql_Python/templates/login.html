@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block title %} Login {% endblock %}
+
+{% block content %}
+
+       <main class="form-signin w-100 m-auto">
+         <div class="form-correct">
+  <form action="/login" method="post">
+    <h1 class="h3 mb-3 fw-normal">Login</h1>
+    <div class="form-floating">
+      <input name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <label for="floatingInput">Email address</label>
+    </div>
+    <hr class="my-4">
+    <div class="form-floating">
+      <input name="password" type="password" class="form-control"  placeholder="Password">
+      <label >Password</label>
+    </div>
+    <hr class="my-4">
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
+  </form>
+         </div>
+</main>
+
+
+
+{% endblock %}

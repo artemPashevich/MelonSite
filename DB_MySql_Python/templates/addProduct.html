@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+
+{% block title %} Add Product {% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <main>
+    <form action="/addProduct" method="post">
+    <div class="py-5 text-center">
+      <h2>Add your product</h2>
+      <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+    </div>
+
+              <label for="firstName" class="form-label">Name Product</label>
+              <input name="name" type="text" class="form-control" id="firstName" placeholder="name" value="" required>
+              <div class="invalid-feedback">
+                Valid first name is required.
+              </div>
+
+
+              <label for="lastName" class="form-label">Price</label>
+              <input name="price" type="number" class="form-control" id="lastName" placeholder="price" value="" required>
+              <div class="invalid-feedback">
+                Valid last name is required.
+              </div>
+
+
+            <div class="col-12">
+              <label for="username" class="form-label">Description</label>
+              <div class="input-group has-validation">
+                <input name="description" type="text" class="form-control" id="username" placeholder="Description" required>
+              <div class="invalid-feedback">
+                  Your username is required.
+                </div>
+              </div>
+            </div>
+                   <hr class="my-4">
+
+          <button class="w-100 btn btn-primary btn-lg" type="submit">Add Product</button>
+    </form>
+
+
+  </main>
+
+</div>
+
+
+{% endblock %}

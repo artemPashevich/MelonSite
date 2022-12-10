@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block title %} Profile {% endblock %}
+
+{% block content %}
+
+<div class="b-example-divider"></div>
+
+  <div class="modal-dialog" role="document">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-body p-5">
+        <h2 class="fw-bold mb-0">Profile</h2>
+
+        <ul class="d-grid gap-4 my-5 list-unstyled">
+          <li class="d-flex gap-4">
+            <img src="../static/name.png" width="48" height="48">
+            <div>
+              <h5 class="mb-0">{{ session['name'] }}</h5>
+            </div>
+          </li>
+          <li class="d-flex gap-4">
+            <img src="../static/email.png" width="48" height="48">
+            <div>
+              <h5 class="mb-0">{{ session['email'] }}</h5>
+            </div>
+          </li>
+          <li class="d-flex gap-4">
+            <img src="../static/phone.png" width="48" height="48">
+            <div>
+              <h5 class="mb-0">{{ phone['phone'] }}</h5>
+            </div>
+          </li>
+        </ul>
+        <a href="/" class="btn btn-lg btn-primary mt-5 w-100" data-bs-dismiss="modal">Edit</a>
+      </div>
+    </div>
+  </div>
+
+
+
+
+{% endblock %}

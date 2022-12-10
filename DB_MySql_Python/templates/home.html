@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+        {% if session['name'] %}
+
+<form action="/" method="post">
+
+<div class="py-5 text-center">
+
+      <h2>All product</h2>
+      <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+    </div>
+
+<div class="container mt-5"></div>
+
+        {% for el in products %}
+    <div class="alert alert-info">
+        <h2>{{ el['name'] }}</h2>
+        <p>{{ el['description'] }}</p>
+        <p><b>Price: {{ el['price'] }}</b></p>
+        <p>
+            {% if el['customer_id'] == id_customer['customer_id'] %}
+            <p><b> your product </b></p>
+
+            {% else %}
+          <a href="/cart/{{el['id_product']}}"  class="btn btn-primary my-2">Add Cart</a>
+          <a href="/cart" class="btn btn-secondary my-2">Go To Cart</a>
+            {% endif %}
+        </p>
+
+    </div>
+           {% endfor %}
+
+            {% else %}
+    <main class="px-3">
+    <h1>Not Login yet</h1>
+    <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+    <p class="lead">
+      <a href="/register" class="btn btn-secondary my-2">Go To Register</a>
+    </p>
+  </main>
+            {% endif %}
+</form>
+{% endblock %}
